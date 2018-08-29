@@ -1,25 +1,25 @@
 import { Platform } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 
-import HomeScreen from '../screens/HomeScreen';
-import PeopleScreen from '../screens/PeopleScreen';
-import MeScreen from '../screens/MeScreen';
+import ClubHomeScreen from '../screens/ClubHomeScreen';
+import ClubMemberScreen from '../screens/ClubMemberScreen';
+import ClubPrivateScreen from '../screens/ClubPrivateScreen';
 
 import AppStyles from '../config/styles';
 
 export const HomeTabNavigation = createMaterialTopTabNavigator(
 	{
-		HomeScreen: {
-			screen: HomeScreen,
-			navigationOptions: { header: null, title: 'Home' }
+		ClubHomeScreen: {
+			screen: ClubHomeScreen,
+			navigationOptions: { header: null, title: 'club' }
 		},
-		MeScreen: {
-			screen: MeScreen,
-			navigationOptions: { header: null, title: 'Me' }
+		ClubPrivateScreen: {
+			screen: ClubPrivateScreen,
+			navigationOptions: { header: null, title: 'private' }
 		},
-		PeopleScreen: {
-			screen: PeopleScreen,
-			navigationOptions: { header: null, title: 'People' }
+		ClubMemberScreen: {
+			screen: ClubMemberScreen,
+			navigationOptions: { header: null, title: 'crew' }
 		}
 	},
 	{

@@ -25,8 +25,10 @@ export default class SearchHeader extends Component {
 			},
 			() => {
 				this.props.navigation.navigate('SearchScreen');
-			}
+			},
+			() => console.log('focused')
 		);
+		
 	};
 
 	onBlur = () => {
@@ -46,10 +48,16 @@ export default class SearchHeader extends Component {
 		}
 	};
 
+	onFacePress = () => {
+		console.log('face pressed');
+		this.props.navigation.navigate('ChatScreen');
+	}
+
 	render() {
 		const activeScreen = this.props.navigation.state.routes[0].routes[
 			this.props.navigation.state.routes[0].index
 		].routeName;
+		let name = this.props.navigation.getParam('username', 'no username');
 
 		return (
 			<View
@@ -89,9 +97,9 @@ export default class SearchHeader extends Component {
 							style={styles.btn}
 							onPress={this.onPress}
 						>
-							<Text style={styles.btnText}>Search</Text>
+							<Text style={styles.btnText}>{name}</Text>
 						</TouchableOpacity>
-						<ToolbarAction icon="face" onPress={this._onSearch} />
+						<ToolbarAction icon="face" onPress={this.onFacePress} />
 					</Toolbar>
 				)}
 			</View>

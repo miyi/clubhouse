@@ -3,7 +3,8 @@ import { createBottomTabNavigator } from 'react-navigation';
 
 import { HomeTabNavigation } from './HomeTabNavigation';
 import FreshScreen from '../screens/FreshScreen';
-import MessagesScreen from '../screens/MessagesScreen';
+// import MessagesScreen from '../screens/MessagesScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 import TabIcon from '../components/TabIcon';
 import AppStyles from '../config/styles';
@@ -38,9 +39,8 @@ export const BottomTabNavigation = createBottomTabNavigator(
 			}
 		},
 		MessagesScreen: {
-			screen: MessagesScreen,
+			screen: ChatScreen,
 			navigationOptions: {
-				header: null,
 				tabBarIcon: MessageIcon
 			} 
 		},
@@ -48,7 +48,7 @@ export const BottomTabNavigation = createBottomTabNavigator(
 	{
 		tabBarOptions: {
 			showLabel: false,
-			activeTintColor: '#0084ff',
+			activeTintColor: '#CCCC00',
 			inactiveTintColor: AppStyles.colors.inactiveGreyColor,
 			pressColor: '#7f8c8d'
 		}

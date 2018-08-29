@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import ChatScreen from '../screens/ChatScreen';
 import SearchScreen from '../screens/SearchScreen';
+import LoginScreen from '../screens/LoginScreen';?
+import SplashScreen from '../screens/SplashScreen'
 
 import { BottomTabNavigation } from './BottomTabNavigation';
 import SearchHeader from '../components/SearchHeader';
@@ -41,6 +43,10 @@ const ModalStack = createStackNavigator(
 );
 
 const MessengerApp = createStackNavigator({
+	SplashScreen: {
+		screen: SplashScreen,
+		navigationOptions: { gesturesEnabled: false, header: null }
+	},
 	MainScreen: {
 		screen: ModalStack,
 		navigationOptions: {
@@ -50,7 +56,6 @@ const MessengerApp = createStackNavigator({
 	},
 	ChatScreen: {
 		screen: ChatScreen,
-		navigationOptions: { gesturesEnabled: false, header: null }
 	}
 });
 
